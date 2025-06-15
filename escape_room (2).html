@@ -685,68 +685,7 @@
     </script>
         }
 
-        function closeMorsePopup() {
-            document.getElementById('popup-overlay').style.display = 'none';
-            document.getElementById('morse-popup').style.display = 'none';
-        }
 
-        function showEmojiHint(num) {
-            freezeScreen(5);
-            const hints = [
-                'קשור לחג הפסח',
-                'עיר',
-                'ספר ילדים',
-                'עיר בארץ',
-                'לא.. שנפשך'
-            ];
-            alert(hints[num - 1]);
-        }
-
-        function checkEmojiAnswer(num, answer) {
-            const correctAnswers = [
-                'אחד מי יודע',
-                'בית שמש',
-                'תירס חם',
-                'בני ברק',
-                'לא בוכים על חלב שנשפך'
-            ];
-            
-            if (answer.trim() === correctAnswers[num - 1]) {
-                emojiAnswers[num - 1] = true;
-                document.getElementById(`emoji-result${num}`).innerHTML = 
-                    `<p style="color: #4caf50;">נכון! המספר שלך: ${emojiNumbers[num - 1]}</p>`;
-                return true;
-            }
-            return false;
-        }
-
-        // Check emoji answers in real time
-        for (let i = 1; i <= 5; i++) {
-            document.getElementById(`emoji${i}`).addEventListener('input', function() {
-                checkEmojiAnswer(i, this.value);
-            });
-        }
-
-        function checkCode(level) {
-            const codes = ['', '9354', '635', '34781', '410', '50'];
-            const input = document.getElementById(`code${level}`).value.trim();
-            const messageDiv = document.getElementById(`message${level}`);
-            
-            if (input === codes[level]) {
-                messageDiv.innerHTML = '<div class="success">נכון! עוברים לשלב הבא!</div>';
-                setTimeout(() => {
-                    document.getElementById(`level${level}`).style.display = 'none';
-                    if (level < 5) {
-                        document.getElementById(`level${level + 1}`).style.display = 'block';
-                        currentLevel = level + 1;
-                    } else {
-                        document.getElementById('final-screen').style.display = 'flex';
-                    }
-                }, 2000);
-            } else {
-                messageDiv.innerHTML = '<div class="error">קוד שגוי, נסו שוב!</div>';
-            }
-        }
     </script>
 </body>
 </html>
