@@ -687,20 +687,7 @@
         }
 
       
-            if (input === codes[level]) {
-                messageDiv.innerHTML = '<div class="success">נכון! עוברים לשלב הבא!</div>';
-                setTimeout(() => {
-                    document.getElementById(`level${level}`).style.display = 'none';
-                    if (level < 5) {
-                        document.getElementById(`level${level + 1}`).style.display = 'block';
-                        currentLevel = level + 1;
-                    } else {
-                        document.getElementById('final-screen').style.display = 'flex';
-                    }
-                }, 2000);
-            } else {
-                messageDiv.innerHTML = '<div class="error">קוד שגוי, נסו שוב!</div>';
-            }
+
         
     </script>
 </body>
