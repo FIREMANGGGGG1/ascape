@@ -373,11 +373,6 @@
             <br><br>
             <button class="hint-button" onclick="showHint(1, 'יש מספרים על המסך שימו לב איפה הם', 5)">תן לי רמז, אבל זה יעלה 10 שניות של פריז</button>
             <br>
-            <p><strong>הרמז השני:</strong></p>
-            <p><strong>קוד מורס:</strong></p>
-             <p><strong>--- -- -.-. .--. .-. / --- -. . - .-. / --- . .- / .- .-. -... .---</strong></p>
-            <button class="hint-button" onclick="showHint(2, 'קישור לאתר - https://charactercalculator.com/he/morse-code-translator/', 10)">תן לי רמז, אבל זה יעלה 10 שניות של פריז</button>
-            <br><br>
             <input type="text" id="code1" class="code-input" placeholder="הכניסו את הקוד">
             <br>
             <button class="submit-button" onclick="checkCode(1)">שלח קוד</button>
@@ -641,7 +636,7 @@
         }
 
         function checkCode(level) {
-            const codes = ['', '9354', '655', '34817', '410', '50'];
+            const codes = ['', '935', '655', '34817', '410', '50'];
             const input = document.getElementById(`code${level}`).value.trim();
             const messageDiv = document.getElementById(`message${level}`);
             
